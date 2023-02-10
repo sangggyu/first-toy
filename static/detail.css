@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KyoboHandwriting2020A';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/KyoboHandwriting2020A.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'NEXON Lv1 Gothic OTF', sans-serif;
+    background-color: #d7ccc8
+}
+
+.wrap {
+    display: flex;
+}
+
+.bookinfo {
+    width: 50%;
+    margin-left: 20px;
+    /* border: 1px solid black; */
+}
+
+.imgbox {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.bookimg {
+    width: 40%;
+    height: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.bookdesc {
+    margin-top: 20px;
+    padding: 5px 5px 5px 5px;
+}
+
+#booktitle {
+    font-size: 23px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+#bookauthor {
+    font-size: 20px;
+    text-align: center;
+}
+
+.desc {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.desc_image {
+    position: relative;
+    width: 100%;
+    margin: 10px auto;
+}
+
+.desc img {
+    width: 80%;
+}
+
+.desc_text{
+position: absolute;
+top:25%;
+left:50%;
+width: 80%;
+transform: translate(-50%,-50%);
+background-color: transparent;
+    word-break: keep-all;
+    word-wrap: normal;
+
+}
+
+.nickname {
+    margin-bottom: 10px;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'KyoboHandwriting2020A';
+    width: 80%;
+
+}
+
+.recommend {
+    background-color: transparent;
+    font-size: 25px;
+    font-family: 'KyoboHandwriting2020A';
+    width: 80%;
+
+}
+
+.comment {
+    display: flex;
+    padding: 5px 5px 5px 5px;
+}
+
+#ubutton {
+    background-color: #a3867e;
+    color: white;
+    border: 0;
+}
+
+#dbutton {
+    background-color: #a3867e;
+    color: white;
+    border: 0px;
+    margin-right: 10px;
+}
+
+#num {
+    display: none;
+}
+
+#testest {
+    background-color: #a3867e;
+    border: 0px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 책을 소개해줄게</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../static/update.css">
+  <link rel="stylesheet" href="/static/total.css">
+  <script>
+    function post() {
+      let image = $('#image').val()
+      let nicName = $('#nicName').val()
+      let comment = $('#comment').val()
+      let title = $('#title').val()
+      let author = $('#author').val()
+      let num = $('#num').val()
+
+      $.ajax({
+          type: "PUT",
+          url: "/updatepage",
+          data: {image: image, nicname:nicName, comment:comment, title:title, author:author, num:num},
+          success: function (response) {
+              alert(response["msg"])
+              window.open('','_self').close();
+              opener.parent.location.reload();
+          }
+      });
+    }
+
+  </script>
+</head>
+  
+<body>
+  <div class="main-box">
+    <div class="box1">
+    <div>
+      <textarea id="num" style="font-size: 0;">{{num}}</textarea>
+      <textarea type="text" placeholder="닉네임" class="nicname form-control" id="nicName">{{nicname}}</textarea>
+    </div>
+
+    <a onclick="post()">작성하기</a>
+
+  </div>
+
+  <div class="box2">
+    <div class="urlBox">
+      <textarea type="url" class="urlBoxIn form-control" id="image" placeholder="이미지 url">{{image}}</textarea>
+    </div>
+    <textarea type="text" class="urlBoxIn form-control" id="title" placeholder="책 이름">{{title}}</textarea>
+    <textarea type="text" class="urlBoxIn form-control" id="author" placeholder="저자">{{author}}</textarea>
+    <textarea class="writeBox form-control" placeholder="추천이유를 적어주세요" id="comment">{{comment}}</textarea>
+
+  </div>
+</div>
+  
+
+</body>
+
+</html>
